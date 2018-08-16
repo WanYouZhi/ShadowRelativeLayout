@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+  <com.wan.shadowrelativelayout.ShadowRelativeLayout
+      android:id="@+id/shadow"
+      android:layout_width="200dp"
+      android:layout_height="100dp"
+      android:background="@drawable/bg_five"
+      android:padding="16dp"
+      bind:shadow_blur="16dp"
+      />
+
+  <com.wan.shadowrelativelayout.ShadowRelativeLayout
+      android:layout_width="200dp"
+      android:layout_height="100dp"
+      android:background="@drawable/bg_round"
+      android:padding="16dp"
+      bind:shadow_radius="5dp"
+      />
+
+  <com.wan.shadowrelativelayout.ShadowRelativeLayout
+      android:layout_width="200dp"
+      android:layout_height="100dp"
+      android:background="@drawable/bg_round"
+      android:padding="16dp"
+      bind:shadow_dx="8dp"
+      bind:shadow_dy="8dp"
+      bind:shadow_radius="5dp"
+      />
+
+  <com.wan.shadowrelativelayout.ShadowRelativeLayout
+      android:layout_width="200dp"
+      android:layout_height="100dp"
+      android:background="@drawable/bg_round"
+      android:padding="16dp"
+      bind:shadow_color="@color/colorAccent"
+      bind:shadow_radius="5dp"
+      />
+
+  <com.wan.shadowrelativelayout.ShadowRelativeLayout
+      android:layout_width="200dp"
+      android:layout_height="100dp"
+      android:background="@drawable/bg_round"
+      android:padding="16dp"
+      bind:shadow_blur="16dp"
+      bind:shadow_color="@color/colorAccent"
+      bind:shadow_radius="5dp"
+      />
+</LinearLayout>
