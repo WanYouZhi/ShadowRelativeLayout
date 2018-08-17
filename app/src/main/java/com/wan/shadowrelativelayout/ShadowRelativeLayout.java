@@ -14,7 +14,10 @@ import android.graphics.drawable.InsetDrawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 /**
@@ -60,6 +63,10 @@ public class ShadowRelativeLayout extends RelativeLayout {
     setPaint();
   }
 
+  @Override protected void onLayout(boolean changed, int l, int t, int r, int b) {
+
+  }
+
   private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
   @Override public void draw(Canvas canvas) {
@@ -68,18 +75,16 @@ public class ShadowRelativeLayout extends RelativeLayout {
     super.draw(canvas);
   }
 
-  private void setInsetBackground() {
+  private boolean setInsetBackground() {
     Drawable background = getBackground();
     if (background == null || background instanceof InsetDrawable) {
-      return;
-    }
-    if (background instanceof ColorDrawable || background instanceof BitmapDrawable) { //纯色或图片背景时会产生黑边框
-      setAlpha(0.996f);
+      return false;
     }
     InsetDrawable drawable =
         new InsetDrawable(background, getPaddingLeft(), getPaddingTop(),
             getPaddingRight(), getPaddingBottom());
     setBackground(drawable);
+    return true;
   }
 
   private RectF getRectF() {
@@ -148,5 +153,9 @@ public class ShadowRelativeLayout extends RelativeLayout {
 
   public void setShadowDy(float shadowDy) {
     this.shadowDy = shadowDy;
+  }
+
+  @Override public boolean isOpaque() { //纯色或图片背景时会产生不是background的黑底色，
+    return false;
   }
 }
