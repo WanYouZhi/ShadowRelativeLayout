@@ -63,6 +63,10 @@ public class ShadowRelativeLayout extends RelativeLayout {
     setPaint();
   }
 
+  @Override protected void onLayout(boolean changed, int l, int t, int r, int b) {
+
+  }
+
   private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
   @Override public void draw(Canvas canvas) {
@@ -151,7 +155,8 @@ public class ShadowRelativeLayout extends RelativeLayout {
     this.shadowDy = shadowDy;
   }
 
-  @Override public boolean isOpaque() { //纯色或图片做背景时draw之前会有黑底色，
+
+  @Override public boolean isOpaque() { //纯色或图片做背景时,draw之前会有黑底色，
     return false;
   }
 }
