@@ -1,5 +1,6 @@
 # ShadowRelativeLayout
-
+## show look
+![image](https://github.com/WanYouZhi/ShadowRelativeLayout/raw/master/20180816110229517.png)
 ## use
 ```
  <com.wan.shadowrelativelayout.ShadowRelativeLayout
