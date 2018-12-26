@@ -31,7 +31,15 @@
       bind:shadow_dx="8dp"
       bind:shadow_dy="8dp"
       bind:shadow_radius="5dp"
-      />
+      >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="我是里面的控件"
+        android:textColor="@android:color/white"
+        android:background="@color/colorAccent"
+        />
+     </com.wan.shadowrelativelayout.ShadowRelativeLayout>
 
   <com.wan.shadowrelativelayout.ShadowRelativeLayout
       android:layout_width="200dp"
